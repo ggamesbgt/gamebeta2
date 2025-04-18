@@ -47,13 +47,13 @@ function create() {
 function update() {
   player.setVelocityX(0);
 
-  if (cursors.left.isDown) {
-    player.setVelocityX(-160);
-  } else if (cursors.right.isDown) {
-    player.setVelocityX(160);
-  }
-
-  if (cursors.up.isDown && player.body.touching.down) {
-    player.setVelocityY(-330);
-  }
+if (cursors.left.isDown || keys.A.isDown) {
+  player.setVelocityX(-160);
+}
+if (cursors.right.isDown || keys.D.isDown) {
+  player.setVelocityX(160);
+}
+if ((cursors.up.isDown || keys.W.isDown) && player.body.touching.down) {
+  player.setVelocityY(-330);
+}
 }
